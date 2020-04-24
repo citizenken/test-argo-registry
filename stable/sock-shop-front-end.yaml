@@ -34,7 +34,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/citizenken/argocd-example-apps.git
-    targetRevision: HEAD
+    targetRevision: local-test
     path: helm-socks-frontend
   destination:
     server: https://kubernetes.default.svc
