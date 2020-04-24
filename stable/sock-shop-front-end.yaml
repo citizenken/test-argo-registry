@@ -36,12 +36,6 @@ spec:
     repoURL: https://github.com/citizenken/argocd-example-apps.git
     targetRevision: HEAD
     path: helm-socks-frontend
-    helm:
-      parameters:
-      - name: image.tag
-        value: latest
-      - name: image.repository
-        value: 428791060841.dkr.ecr.us-east-1.amazonaws.com/sock-shop-front-end
   destination:
     server: https://kubernetes.default.svc
     namespace: sock-shop-front-end
