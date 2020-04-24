@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 3rd-party-apps
+  namespace: argocd
+  labels:
+    release: test
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/citizenken/test-helm-repo.git
+    targetRevision: HEAD
+    path: 3rd-party
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+    # Sync policy
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    validate: true
