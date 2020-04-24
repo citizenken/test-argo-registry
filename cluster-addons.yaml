@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: 3rd-party-apps
+  name: cluster-addons
   namespace: argocd
   labels:
     release: test
 spec:
   project: default
   source:
-    repoURL: https://github.com/citizenken/test-helm-repo.git
+    repoURL: https://github.com/citizenken/test-argo-registry.git
     targetRevision: HEAD
-    path: 3rd-party
+    path: cluster-addons
     directory:
       recurse: true
   destination:
